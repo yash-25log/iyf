@@ -9,7 +9,6 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
@@ -77,14 +76,14 @@ export function Topbar() {
         </DropdownMenuTrigger>
 
         <DropdownMenuContent align="end" className="w-52">
-          <DropdownMenuLabel className="font-normal">
+          <div className="px-3 py-2 text-xs font-normal">
             <div className="flex flex-col gap-0.5">
-              <span className="font-medium text-sm">{profile?.full_name}</span>
+              <span className="font-medium text-sm text-foreground">{profile?.full_name}</span>
               <span className="text-xs text-muted-foreground truncate">
                 {ROLE_LABELS[role ?? ''] ?? role}
               </span>
             </div>
-          </DropdownMenuLabel>
+          </div>
           <DropdownMenuSeparator />
           <DropdownMenuItem id="profile-menu-item">
             <User className="mr-2 h-4 w-4" />
